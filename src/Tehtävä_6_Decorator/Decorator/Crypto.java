@@ -23,7 +23,7 @@ public class Crypto extends StringDecorator {
     private String encrypt(String d) {
         byte[] result = d.getBytes();
         for (int i = 0; i < result.length; i++) {
-            result[i] += (byte) 10;
+            result[i] += (byte) 9001;
         }
         return Base64.getEncoder().encodeToString(result);
     }
@@ -31,7 +31,7 @@ public class Crypto extends StringDecorator {
     private String decrypt(String d) {
         byte[] result = Base64.getDecoder().decode(d);
         for (int i = 0; i < result.length; i++) {
-            result[i] -= (byte) 10;
+            result[i] -= (byte) 9001;
         }
         return new String(result);
     }
