@@ -38,7 +38,7 @@ public class China implements CreatureState {
     }
 
     @Override
-    public boolean experience() { return (exp >= 10) ? true : false; }
+    public boolean experience() { return exp >= 10; }
 
     @Override
     public boolean maxlvl() { return maxlvl; }
