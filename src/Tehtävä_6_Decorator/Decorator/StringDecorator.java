@@ -1,22 +1,20 @@
 package Tehtävä_6_Decorator.Decorator;
 
-import Tehtävä_6_Decorator.File.Data;
+import Tehtävä_6_Decorator.File.FileManager;
 
-public abstract class StringDecorator implements Data {
+public abstract class StringDecorator implements FileManager {
 
-    private Data data;
+    private FileManager fileManager;
 
-    public StringDecorator(Data data) {
-        this.data = data;
+    public StringDecorator(FileManager fileManager) {
+        this.fileManager = fileManager;
     }
 
     @Override
-    public void writeFile(String d) {
-        data.writeFile(d);
-    }
+    public void writeFile(String d) { fileManager.writeFile(d); }
 
     @Override
     public String readFile() {
-        return data.readFile();
+        return fileManager.readFile();
     }
 }

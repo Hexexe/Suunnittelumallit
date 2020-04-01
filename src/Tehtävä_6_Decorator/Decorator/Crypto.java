@@ -1,12 +1,12 @@
 package Tehtävä_6_Decorator.Decorator;
 
-import Tehtävä_6_Decorator.File.Data;
+import Tehtävä_6_Decorator.File.FileManager;
 
 import java.util.Base64;
 
 public class Crypto extends StringDecorator {
 
-    public Crypto(Data w) {
+    public Crypto(FileManager w) {
         super(w);
     }
 
@@ -20,16 +20,16 @@ public class Crypto extends StringDecorator {
         return decrypt(super.readFile());
     }
 
-    private String encrypt(String d) {
-        byte[] result = d.getBytes();
+    private String encrypt(String s) {
+        byte[] result = s.getBytes();
         for (int i = 0; i < result.length; i++) {
             result[i] += (byte) 9001;
         }
         return Base64.getEncoder().encodeToString(result);
     }
 
-    private String decrypt(String d) {
-        byte[] result = Base64.getDecoder().decode(d);
+    private String decrypt(String s) {
+        byte[] result = Base64.getDecoder().decode(s);
         for (int i = 0; i < result.length; i++) {
             result[i] -= (byte) 9001;
         }
