@@ -2,7 +2,7 @@ package Tehtävä_6_Decorator.Decorator;
 
 import Tehtävä_6_Decorator.File.Data;
 
-public class StringDecorator implements Data {
+public abstract class StringDecorator implements Data {
 
     private Data source;
 
