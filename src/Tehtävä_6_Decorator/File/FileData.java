@@ -1,4 +1,4 @@
-package Tehtävä_6_Decorator;
+package Tehtävä_6_Decorator.File;
 
 import java.io.*;
 
