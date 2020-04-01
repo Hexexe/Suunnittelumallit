@@ -1,5 +1,10 @@
 package Tehtävä_6_Decorator;
 
+import Tehtävä_6_Decorator.Decorator.Crypto;
+import Tehtävä_6_Decorator.Decorator.StringDecorator;
+import Tehtävä_6_Decorator.File.Data;
+import Tehtävä_6_Decorator.File.FileData;
+
 public class Main {
 
     public static void main(String[] args) {

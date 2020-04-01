@@ -1,4 +1,6 @@
-package Tehtävä_6_Decorator;
+package Tehtävä_6_Decorator.Decorator;
+
+import Tehtävä_6_Decorator.File.Data;
 
 import java.util.Base64;
 
