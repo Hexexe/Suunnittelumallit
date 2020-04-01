@@ -14,7 +14,7 @@ public class Main {
         Data plain = new FileData("out/SuperSecretFile.txt");
 
         System.out.printf("Input: %s\n", s);
-        System.out.printf("Encoded: %s\n", plain.readFile());
-        System.out.printf("Decoded: %s", encrypted.readFile());
+        System.out.printf("Encrypted: %s\n", plain.readFile());
+        System.out.printf("Decrypted: %s", encrypted.readFile());
     }
 }

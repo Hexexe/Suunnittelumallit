@@ -4,19 +4,19 @@ import Tehtävä_6_Decorator.File.Data;
 
 public abstract class StringDecorator implements Data {
 
-    private Data source;
+    private Data data;
 
-    public StringDecorator(Data source) {
-        this.source = source;
+    public StringDecorator(Data data) {
+        this.data = data;
     }
 
     @Override
     public void writeFile(String d) {
-        source.writeFile(d);
+        data.writeFile(d);
     }
 
     @Override
     public String readFile() {
-        return source.readFile();
+        return data.readFile();
     }
 }
