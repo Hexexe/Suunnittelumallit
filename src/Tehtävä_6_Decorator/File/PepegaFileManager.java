@@ -15,7 +15,7 @@ public class PepegaFileManager implements FileManager {
         try (OutputStream o = new FileOutputStream(new File(filename))) {
             o.write(d.getBytes());
         } catch (IOException e) {
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 
@@ -27,7 +27,7 @@ public class PepegaFileManager implements FileManager {
             buffer = new char[(int) file.length()];
             reader.read(buffer);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return new String(buffer);
     }
