@@ -8,7 +8,7 @@ import Tehtävä_6_Decorator.File.PepegaFileManager;
 public class Main {
 
     public static void main(String[] args) {
-        String s = "Pepega Clap";
+        String s = "Todella salainen koodi: 1234-5678-9101-1121";
         StringDecorator encrypted = new Crypto(new PepegaFileManager("out/SuperSecretFile.txt"));
         encrypted.writeFile(s);
         FileManager plain = new PepegaFileManager("out/SuperSecretFile.txt");
