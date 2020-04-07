@@ -10,8 +10,6 @@ public class TicTacToe extends Game {
     public static Scanner s = new Scanner(System.in);
     private Map<Integer, Object> map = new HashMap<>();
     private int currentPlayer;
-    private boolean validMove;
-    private String ss;
 
     @Override
     void initializeGame() {
@@ -22,11 +20,11 @@ public class TicTacToe extends Game {
     @Override
     void makePlay(int player) {
         currentPlayer = player;
-        System.out.printf("\nPlayer %d Choose coordinates (1-9): ", player + 1);
-        validMove = false;
+        System.out.printf("\nPlayer %d choose your grid number (1-9): ", player + 1);
+        boolean validMove = false;
         while (!validMove) {
             try {
-                ss = s.next();
+                String ss = s.next();
                 while (!(map.get(Integer.parseInt(ss)).equals("_") && ss.matches("[1-9]"))) {
                     System.out.println("Invalid Input");
                     ss = s.next();
@@ -40,22 +38,17 @@ public class TicTacToe extends Game {
     }
 
     @Override
-    boolean endOfGame() { return checkWinner(); }
+    boolean endOfGame() { return checkWinner() || !map.containsValue("_"); }
 
     @Override
     void printWinner() {
-        if (!map.containsValue("_")){
-            System.out.println("Tasapeli");
-        }else {
-            System.out.printf("Pelaaja %d voitti pelin", currentPlayer + 1);
-        }
+        if (!checkWinner()) System.out.println("Draw");
+        else System.out.printf("Player %d won the game", currentPlayer + 1);
     }
 
     public void printBoard() {
-        map.entrySet().forEach(e -> {
-            System.out.print(" | " + e.getValue());
-            if (IntStream.of(3, 6, 9).anyMatch(i -> i == e.getKey())) System.out.println(" | ");
-        });
+        map.entrySet().forEach(e -> { System.out.print(" | " + e.getValue());
+        if (IntStream.of(3, 6, 9).anyMatch(i -> i == e.getKey())) System.out.println(" | "); });
     }
 
     public void checkInput(int i, int player) {
@@ -65,20 +58,17 @@ public class TicTacToe extends Game {
     }
 
     private boolean checkWinner() {
-        // kovakoodattu väliaikasesti
-        // vaaka
+        //horizontal
         if (map.get(1) == map.get(2) && map.get(2) == map.get(3) && map.get(1) != "_") return true;
         if (map.get(4) == map.get(5) && map.get(5) == map.get(6) && map.get(4) != "_") return true;
         if (map.get(7) == map.get(8) && map.get(8) == map.get(9) && map.get(7) != "_") return true;
-        // pysty
+        //vertical
         if (map.get(1) == map.get(4) && map.get(4) == map.get(7) && map.get(1) != "_") return true;
         if (map.get(2) == map.get(5) && map.get(5) == map.get(8) && map.get(2) != "_") return true;
         if (map.get(3) == map.get(6) && map.get(6) == map.get(9) && map.get(3) != "_") return true;
-        // sivu
+        //diagonal
         if (map.get(1) == map.get(5) && map.get(5) == map.get(9) && map.get(1) != "_") return true;
         if (map.get(3) == map.get(5) && map.get(5) == map.get(7) && map.get(3) != "_") return true;
-        if(!map.containsValue("_")) return true;
-
         return false;
     }
 }
