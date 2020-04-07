@@ -44,7 +44,11 @@ public class TicTacToe extends Game {
 
     @Override
     void printWinner() {
-        System.out.printf("Pelaaja %d voitti pelin", currentPlayer + 1);
+        if (!map.containsValue("_")){
+            System.out.println("Tasapeli");
+        }else {
+            System.out.printf("Pelaaja %d voitti pelin", currentPlayer + 1);
+        }
     }
 
     public void printBoard() {
@@ -73,6 +77,7 @@ public class TicTacToe extends Game {
         // sivu
         if (map.get(1) == map.get(5) && map.get(5) == map.get(9) && map.get(1) != "_") return true;
         if (map.get(3) == map.get(5) && map.get(5) == map.get(7) && map.get(3) != "_") return true;
+        if(!map.containsValue("_")) return true;
 
         return false;
     }
