@@ -1,4 +1,4 @@
-package Tehtävä_9_Strategy;
+package Tehtävä_9_Strategy.Sorts;
 
 import java.util.List;
 

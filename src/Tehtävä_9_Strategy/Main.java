@@ -1,5 +1,9 @@
 package Tehtävä_9_Strategy;
 
+import Tehtävä_9_Strategy.Sorts.BubbleSort;
+import Tehtävä_9_Strategy.Sorts.InsertionSort;
+import Tehtävä_9_Strategy.Sorts.SelectionSort;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
