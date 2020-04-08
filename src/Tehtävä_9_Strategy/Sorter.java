@@ -16,10 +16,8 @@ public class Sorter {
 
     public void sort(List<Integer> list) {
         a = new ArrayList(List.copyOf(list));
-        System.out.println(a);
         strategy.sort(a);
         strategy.getResult();
-        System.out.println(a);
     }
 
     public void setStrategy(SortStrategy strategy) {
