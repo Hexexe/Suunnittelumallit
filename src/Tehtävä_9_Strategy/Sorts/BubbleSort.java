@@ -5,14 +5,12 @@ import java.util.List;
 public class BubbleSort implements SortStrategy {
 
     Integer temp;
-    boolean sorted = false;
-    private long startTime;
-    private long endTime;
+    boolean sorted;
     private double elapsedTime;
 
     @Override
     public void sort(List<Integer> l) {
-        startTime = System.nanoTime();
+        long startTime = System.nanoTime();
         while (!sorted) {
             sorted = true;
             for (int i = 0; i < l.size() - 1; i++) {
@@ -24,7 +22,7 @@ public class BubbleSort implements SortStrategy {
                 }
             }
         }
-        endTime = System.nanoTime();
+        long endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
     }
 

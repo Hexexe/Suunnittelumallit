@@ -21,7 +21,6 @@ public class Main {
         s.sort(l);
         s.setStrategy(new BubbleSort());
         s.sort(l);
-
     }
 }
 
