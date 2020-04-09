@@ -8,14 +8,13 @@ import java.util.List;
 public class Sorter {
 
     private SortStrategy strategy;
-    private ArrayList a;
 
     public Sorter(SortStrategy strategy) {
         this.strategy = strategy;
     }
 
     public void sort(List<Integer> list) {
-        a = new ArrayList(List.copyOf(list));
+        ArrayList<Integer> a = new ArrayList<>(List.copyOf(list));
         strategy.sort(a);
         strategy.getResult();
     }

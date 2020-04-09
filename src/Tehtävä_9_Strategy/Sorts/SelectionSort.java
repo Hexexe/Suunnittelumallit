@@ -4,13 +4,11 @@ import java.util.List;
 
 public class SelectionSort implements SortStrategy {
 
-    private long startTime;
-    private long endTime;
     private double elapsedTime;
 
     @Override
     public void sort(List<Integer> l) {
-        startTime = System.nanoTime();
+        long startTime = System.nanoTime();
         for (int i = 0; i < l.size() - 1; i++) {
             int index = i;
             for (int j = i + 1; j < l.size(); j++)
@@ -19,7 +17,7 @@ public class SelectionSort implements SortStrategy {
             l.set(index, l.get(i));
             l.set(i, smallerNumber);
         }
-        endTime = System.nanoTime();
+        long endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
     }
 
